@@ -5,7 +5,6 @@ on:
             - "**.go"
             - go.mod
             - go.sum
-            - CHANGELOG.md
             - .github/workflows/CICD.yml
 
 jobs:
@@ -77,6 +76,6 @@ jobs:
                   mkdir ~/.ssh
                   ssh-keyscan speely.net >> ~/.ssh/known_hosts
                   ssh github@speely.net sudo systemctl stop unit
-                  scp server github@speely.net:/home/speely/server
+                  scp server github@speely.net:~/
                   ssh github@speely.net sudo systemctl start unit
 
