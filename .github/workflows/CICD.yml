@@ -1,5 +1,12 @@
 name: CI/CD
-on: push
+on:
+    push:
+        paths:
+            - "**.go"
+            - go.mod
+            - go.sum
+            - CHANGELOG.md
+            - .github/workflows/CICD.yml
 
 jobs:
     test:
