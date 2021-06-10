@@ -1,9 +1,13 @@
 package main
 
-import unit "unit.nginx.org/go"
+import (
+	"http"
+
+	unit "unit.nginx.org/go"
+)
 
 func main() {
-	if e := unit.ListenAndServe(":8080", nil); e != nil {
+	if e := unit.ListenAndServe(":8080", http.FileServer(http.Dir("./static/"))); e != nil {
 		panic(e)
 	}
 }
