@@ -9,8 +9,7 @@ import (
 
 var handlers = make(map[string]http.Handler)
 
-// CreateRouter generates the router for the server. It also exposes this functionality to tests.
-func CreateRouter() *mux.Router {
+func createRouter() *mux.Router {
 	r := mux.NewRouter()
 
 	for p, h := range handlers {
@@ -21,7 +20,7 @@ func CreateRouter() *mux.Router {
 }
 
 func main() {
-	if e := unit.ListenAndServe(":8080", CreateRouter()); e != nil {
+	if e := unit.ListenAndServe(":8080", createRouter()); e != nil {
 		panic(e)
 	}
 }

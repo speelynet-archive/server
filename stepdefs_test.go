@@ -1,4 +1,4 @@
-package main_test
+package main
 
 import (
 	"fmt"
@@ -12,6 +12,7 @@ var (
 )
 
 func iCreateAMockServer() error {
+	ms = httptest.NewServer(createRouter())
 	return godog.ErrPending
 }
 
