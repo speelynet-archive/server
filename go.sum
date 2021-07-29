@@ -326,5 +326,5 @@ honnef.co/go/tools v0.0.0-20190106161140-3f1c8253044a/go.mod h1:rf3lG4BRIbNafJWh
 honnef.co/go/tools v0.0.0-20190418001031-e561f6794a2a/go.mod h1:rf3lG4BRIbNafJWhAfAdb/ePZxsR/4RtNHQocxwk9r4=
 honnef.co/go/tools v0.0.1-2019.2.3/go.mod h1:a3bituU0lyd329TUQxRnasdCoJDkEUEAqEt0JzvZhAg=
 rsc.io/binaryregexp v0.2.0/go.mod h1:qTv7/COck+e2FymRvadv62gMdZztPaShugOCi3I+8D8=
-unit.nginx.org v0.0.0-20210723143703-53a9f4983fe0 h1:PCHc8BA3ElnYwYhteYfS63gkYp76c6lG/dIGtWBLT0U=
-unit.nginx.org v0.0.0-20210723143703-53a9f4983fe0/go.mod h1:Dq/lsyXCM2pQytOmLlsRuRIh/09HRBI/wIA7/ag2GKw=
+unit.nginx.org v0.0.0-20210724034452-b8a2ac618950 h1:FpLjjw9/YSF8AXDghEi211QjSdjYM5e2DXalN4UnvNM=
+unit.nginx.org v0.0.0-20210724034452-b8a2ac618950/go.mod h1:Dq/lsyXCM2pQytOmLlsRuRIh/09HRBI/wIA7/ag2GKw=
