@@ -25,11 +25,11 @@ func iCreateAMockServer() error {
 }
 
 func iCreateTheTemporaryFile(filepath string) error {
-	dir := "testdata/" + path.Dir(filepath)
+	dir := path.Dir(filepath)
 
 	if e := os.MkdirAll(dir, os.ModePerm); e != nil {
 		return e
-	} else if currentFile, e = os.Create("testdata/" + filepath); e != nil {
+	} else if currentFile, e = os.Create(filepath); e != nil {
 		return e
 	}
 
@@ -68,7 +68,12 @@ func theContentOfTheTemporaryFileIs(content *godog.DocString) error {
 }
 
 func InitializeTestSuite(ctx *godog.TestSuiteContext) {
+	ctx.BeforeSuite(func() {
+		_ = os.Mkdir("testdata", os.ModePerm)
+		_ = os.Chdir("testdata")
+	})
 	ctx.AfterSuite(func() {
+		_ = os.Chdir("..")
 		_ = os.RemoveAll("testdata")
 	})
 }
@@ -93,5 +98,7 @@ func InitializeScenario(ctx *godog.ScenarioContext) {
 		currentFile = nil
 
 		fileContent = ""
+
+		_ = os.RemoveAll("*")
 	})
 }
