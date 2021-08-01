@@ -9,6 +9,8 @@ import (
 func CreateRouter() *mux.Router {
 	r := mux.NewRouter()
 
+	r.PathPrefix("/").HandlerFunc(home)
+
 	return r
 }
 
