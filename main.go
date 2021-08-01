@@ -9,7 +9,8 @@ import (
 
 var handlers = make(map[string]http.Handler)
 
-func createRouter() *mux.Router {
+// CreateRouter routes declared handlers to their respective paths.
+func CreateRouter() *mux.Router {
 	r := mux.NewRouter()
 
 	for p, h := range handlers {
@@ -20,7 +21,7 @@ func createRouter() *mux.Router {
 }
 
 func main() {
-	if e := unit.ListenAndServe(":8080", createRouter()); e != nil {
+	if e := unit.ListenAndServe(":8080", CreateRouter()); e != nil {
 		panic(e)
 	}
 }
