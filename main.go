@@ -8,7 +8,9 @@ import (
 // CreateRouter routes declared handlers to their respective paths.
 func CreateRouter() *mux.Router {
 	r := mux.NewRouter()
+	r.StrictSlash(true)
 
+	components(r.PathPrefix("/components").Subrouter())
 	r.PathPrefix("/").Handler(home)
 
 	return r

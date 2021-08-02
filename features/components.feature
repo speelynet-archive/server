@@ -6,7 +6,6 @@ Feature: the components route
   Background:
     Given I create a mock server
 
-  @wip
   Scenario Template: stable directory
     Given I create the temporary file "components/stable/index.js"
     And the content of the temporary file is
@@ -19,11 +18,10 @@ Feature: the components route
     Then I should see the file content
 
     Scenarios:
-      | path   |
-      |        |
-      | stable |
+      | path    |
+      |         |
+      | stable/ |
 
-  @wip
   Scenario: latest directory
     Given I create the temporary file "components/latest/index.js"
     And the content of the temporary file is
@@ -35,7 +33,6 @@ Feature: the components route
     When I go to "mock.server/components/latest/index.js"
     Then I should see the file content
 
-  @wip
   Scenario Template: root is index.js
     Given I create the temporary file "components/<path>/index.js"
     And the content of the temporary file is
@@ -44,11 +41,14 @@ Feature: the components route
       console.log("<url>");
     }
     """
-    When I go to "mock.server/components/<url>"
+    When I go to "mock.server/components<url>"
     Then I should see the file content
 
     Scenarios:
-      | path   | url     |
-      | stable |         |
-      | stable | stable/ |
-      | latest | latest/ |
+      | path   | url      |
+      | stable |          |
+      | stable | /        |
+      | stable | /stable  |
+      | stable | /stable/ |
+      | latest | /latest  |
+      | latest | /latest/ |
