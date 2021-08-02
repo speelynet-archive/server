@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### [v0.2.2](https://github.com/speelynet/server/tree/v0.2.2)
+- Disable strict-slash routing to fix redirection issue in [components](https://github.com/speelynet/server/blob/v0.2.2/components.go) route
+
 ### [v0.2.1](https://github.com/speelynet/server/tree/v0.2.1)
 - Fix redirection bug in [components](https://github.com/speelynet/server/blob/v0.2.1/components.go) route
 
