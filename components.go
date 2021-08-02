@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func components(subrouter *mux.Router) {
+func components(r *mux.Router) {
 	for _, v := range []interface{}{"/latest/", "/stable/", []string{"/", "/stable/"}} {
 		var url, path string
 		switch v.(type) {
@@ -17,9 +17,9 @@ func components(subrouter *mux.Router) {
 			path = v.([]string)[1]
 		}
 
-		subrouter.Path(url).HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		r.Path("/components" + url).HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			http.ServeFile(w, r, "./components"+path+"index.js")
 		})
-		subrouter.PathPrefix(url).Handler(http.StripPrefix("/components"+url, http.FileServer(http.Dir("./components"+path))))
+		r.PathPrefix("/components" + url).Handler(http.StripPrefix("/components"+url, http.FileServer(http.Dir("./components"+path))))
 	}
 }

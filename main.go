@@ -10,7 +10,7 @@ func CreateRouter() *mux.Router {
 	r := mux.NewRouter()
 	r.StrictSlash(true)
 
-	components(r.PathPrefix("/components").Subrouter())
+	components(r)
 	r.PathPrefix("/").Handler(home)
 
 	return r
