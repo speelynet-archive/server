@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gorilla/mux"
 	"net/http"
+	"regexp"
 )
 
 func components(r *mux.Router) {
@@ -17,12 +18,14 @@ func components(r *mux.Router) {
 			path = v.([]string)[1]
 		}
 
-		r.Path("/components" + url + "/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			http.ServeFile(w, r, "./components"+path+"/index.js")
-		})
-		r.PathPrefix("/components" + url + "/").Handler(http.StripPrefix("/components"+url+"/", http.FileServer(http.Dir("./components"+path+"/"))))
-		r.Path("/components" + url).HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			http.ServeFile(w, r, "./components"+path+"/index.js")
+		r.PathPrefix("/components" + url).HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("Access-Control-Allow-Origin", "*")
+
+			if regexp.MustCompile("components" + url + "/?$").MatchString(r.URL.Path) {
+				http.ServeFile(w, r, "./components"+path+"/index.js")
+			} else {
+				http.StripPrefix("/components"+url, http.FileServer(http.Dir("./components"+path))).ServeHTTP(w, r)
+			}
 		})
 	}
 }
