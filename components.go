@@ -22,7 +22,11 @@ func components(r *mux.Router) {
 			w.Header().Set("Access-Control-Allow-Origin", "*")
 
 			if regexp.MustCompile("components" + url + "/?$").MatchString(r.URL.Path) {
-				http.ServeFile(w, r, "./components"+path+"/index.js")
+				if r.URL.Path[len(r.URL.Path)-1] != '/' {
+					http.Redirect(w, r, r.URL.Host+"/components"+url+"/", 302)
+				} else {
+					http.ServeFile(w, r, "./components"+path+"/index.js")
+				}
 			} else {
 				http.StripPrefix("/components"+url, http.FileServer(http.Dir("./components"+path))).ServeHTTP(w, r)
 			}
