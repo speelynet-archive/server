@@ -7,7 +7,7 @@ Feature: the home page route
     Given I create a mock server
 
   Scenario: index.html
-    Given I create the temporary file "static/index.html"
+    Given I create the temporary file "home/index.html"
     And the content of the temporary file is
       """
       <html>
@@ -18,7 +18,7 @@ Feature: the home page route
     Then I should see the file content
 
   Scenario: other files
-    Given I create the temporary file "static/thing.txt"
+    Given I create the temporary file "home/thing.txt"
     And the content of the temporary file is
         """
         Hello, World!
