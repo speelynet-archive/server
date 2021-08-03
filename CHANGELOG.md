@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### [v0.2.5](https://github.com/speelynet/server/tree/v0.2.5)
+- Update [components route](https://github.com/speelynet/server/blob/v0.2.5/components.go#L25)
+
 ### [v0.2.4](https://github.com/speelynet/server/tree/v0.2.4)
 - Update logic for [defining subroutes of components route](https://github.com/speelynet/server/blob/v0.2.4/components.go#L21)
 - Set 'Access-Control-Allow-Origin' header to '*' for [components](https://github.com/speelynet/server/blob/v0.2.4/components.go#L22) route
