@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### [v0.2.3](https://github.com/speelynet/server/tree/v0.2.3)
+- Modify [home](https://github.com/speelynet/server/blob/v0.2.3/home.go#L5) route to serve "home" directory instead of "static" directory
+
 ### [v0.2.2](https://github.com/speelynet/server/tree/v0.2.2)
 - Disable strict-slash routing to fix redirection issue in [components](https://github.com/speelynet/server/blob/v0.2.2/components.go) route
 
