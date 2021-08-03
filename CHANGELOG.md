@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### [v0.2.4](https://github.com/speelynet/server/tree/v0.2.4)
+- Update logic for [defining subroutes of components route](https://github.com/speelynet/server/blob/v0.2.4/components.go#L21)
+- Set 'Access-Control-Allow-Origin' header to '*' for [components](https://github.com/speelynet/server/blob/v0.2.4/components.go#L22) route
+
 ### [v0.2.3](https://github.com/speelynet/server/tree/v0.2.3)
 - Modify [home](https://github.com/speelynet/server/blob/v0.2.3/home.go#L5) route to serve "home" directory instead of "static" directory
 
