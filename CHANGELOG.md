@@ -1,5 +1,7 @@
 # CHANGELOG
 
+### [v0.2.6](https://github.com/speelynet/server/tree/v0.2.6)
+- Upgrade [NGINX Unit](https://unit.nginx.org) version in [CI/CD workflow](https://github.com/speelynet/server/blob/v0.2.6/.github/workflows/CICD.yml)
 ### [v0.2.5](https://github.com/speelynet/server/tree/v0.2.5)
 - Update [components route](https://github.com/speelynet/server/blob/v0.2.5/components.go#L25)
 
