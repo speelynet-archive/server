@@ -1,10 +1,13 @@
 # CHANGELOG
 
+### [v0.2.8](https://github.com/speelynet/server/tree/v0.2.7)
+- Upgrade [NGINX Unit](https://unit.nginx.org) version in [CI/CD workflow](https://github.com/speelynet/server/blob/v0.2.8/.github/workflows/CICD.yml) from 1.26.0 to 1.26.1
+
 ### [v0.2.7](https://github.com/speelynet/server/tree/v0.2.7)
-- Upgrade [NGINX Unit](https://unit.nginx.org) version in [CI/CD workflow](https://github.com/speelynet/server/blob/v0.2.7/.github/workflows/CICD.yml)
+- Upgrade [NGINX Unit](https://unit.nginx.org) version in [CI/CD workflow](https://github.com/speelynet/server/blob/v0.2.7/.github/workflows/CICD.yml) from 1.25.0 to 1.26.0
 
 ### [v0.2.6](https://github.com/speelynet/server/tree/v0.2.6)
-- Upgrade [NGINX Unit](https://unit.nginx.org) version in [CI/CD workflow](https://github.com/speelynet/server/blob/v0.2.6/.github/workflows/CICD.yml)
+- Upgrade [NGINX Unit](https://unit.nginx.org) version in [CI/CD workflow](https://github.com/speelynet/server/blob/v0.2.6/.github/workflows/CICD.yml) from 1.24.0 to 1.25.0
 
 ### [v0.2.5](https://github.com/speelynet/server/tree/v0.2.5)
 - Update [components route](https://github.com/speelynet/server/blob/v0.2.5/components.go#L25)
